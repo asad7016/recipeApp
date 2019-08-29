@@ -1,19 +1,27 @@
 <div class="row">
     <div class="col-md-12">
         <button class="btn btn-success">New Recipe</button>
+       <hr>       
     </div>
 </div>
+
+
 <div class="row">
     <div class="col-md-12">
-        <a href="#" class="list-group-item clearfix">
-            <div class="pull-left">
-                <h4 class="list-gourp-ite,-heading">Recipe Name</h4>
-                <p class="list-group-item-text">Description</p>
-            </div>
-            <span class="pull-right">
-                <img src="" alt="" class="img-responsive" style="max-height: 50px;">
-
-            </span>
-        </a>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-light clearfix"
+            *ngFor = "let recipe of recipes"> 
+                <div class="float-left">
+                    <h4 class="mb-1">{{ recipe.name }}</h4>
+                    <p class="mb-1">{{ recipe.description }}</p>
+                </div>
+                <span class="float-right">
+                    <img 
+                    [src]="recipe.imagePath"
+                    alt="{{ recipe.name }}"
+                    class="img-fluid m-1 rounded" style="max-height: 50px;">
+                </span>
+            </a>
+    </div>
     </div>
 </div>
